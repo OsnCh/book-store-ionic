@@ -1,0 +1,47 @@
+<ion-content center>
+  <ion-grid style="height: 100%; flex-direction: column;">
+    <ion-row center
+             justify-content-center
+             align-items-center
+             style="height: 100%">
+      <ion-col>
+        <ion-text style="text-align: center; font-weight: 800;">
+          <h3>Registration</h3>
+        </ion-text>
+        <form [formGroup]="registrationGroup">
+          <ion-item class="rounded-validate no-focusable-line">
+            <ion-input class="no-validation-line" formControlName = "firstName" type="text"
+                       placeholder="First name"></ion-input>
+          </ion-item>
+          <title *ngIf="getControl('firstName').invalid" class="error">First name has 1 or more characters.</title>
+          <ion-item class="rounded-validate no-focusable-line">
+            <ion-input class="no-validation-line"  formControlName = "lastName" type="text"
+                       placeholder="Last name"></ion-input>
+          </ion-item>
+          <title *ngIf="getControl('lastName').invalid" class="error">Last name has 1 or more characters.</title>
+          <ion-item class="rounded-validate no-focusable-line">
+            <ion-input class="no-validation-line"  formControlName = "email" type="text"
+                       placeholder="Email"></ion-input>
+          </ion-item>
+          <title *ngIf="getControl('email').invalid" class="error">Email is not required.</title>
+          <ion-item class="rounded-validate no-focusable-line">
+            <ion-input class="no-validation-line" type="password" formControlName = "password" type="text"
+                       placeholder="Password"></ion-input>
+          </ion-item>
+          <title *ngIf="getControl('password').invalid" class="error">Password has 8 or more characters.</title>
+          <ion-item [ngClass]="{'item-error': getControl('confirmPassword').invalid }" class="rounded no-focusable-line">
+            <ion-input class="no-validation-line" type="password"  formControlName = "confirmPassword" type="text"
+                       placeholder="Confirm password"></ion-input>
+          </ion-item>
+          <title *ngIf="getControl('confirmPassword').invalid" class="error">Passwords do not match.</title>
+        </form>
+
+        <button clear>Registration</button>
+
+        <button clear
+                [routerLink]="['/account']">Back</button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

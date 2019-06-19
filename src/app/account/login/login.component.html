@@ -1,0 +1,37 @@
+<ion-content center>
+  <ion-grid style="height: 100%; flex-direction: column;">
+    <ion-row center
+             justify-content-center
+             align-items-center
+             style="height: 100%">
+      <ion-col>
+        <ion-text style="text-align: center; font-weight: 800;">
+          <h3>Login</h3>
+        </ion-text>
+        <ion-item class="rounded no-focusable-line">
+          <ion-input type="text"
+                     placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item class="rounded no-focusable-line no-native-padding"
+                  id="login-password">
+          <ion-input type="password"
+                     placeholder="Password"></ion-input>
+          <button id="forgot"
+                  clear
+                  item-right>Forgot?</button>
+        </ion-item>
+        <button clear
+                id="login">Login</button>
+        <button clear
+                id="registration"
+                [routerLink]="['/account', 'registration']">Registration</button>
+        <div class="or-block">
+          <div class="separator"></div>
+          <p>Or</p>
+          <div class="separator"></div>
+        </div>
+        <button type="button" mdbBtn class="btn-fb waves-light" mdbWavesEffect><i class="fab fa-facebook-f left"></i>Facebook</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
